@@ -1,12 +1,3 @@
-function toggleLegend(legendId) {
-    const legend = document.getElementById(legendId);
-    if (legend.style.display === 'none' || legend.style.display === '') {
-        legend.style.display = 'block';
-    } else {
-        legend.style.display = 'none';
-    }
-}
-
 document.getElementById('surveyForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -47,7 +38,7 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         data[key] = value;
     });
 
-    fetch('https://script.google.com/macros/s/AKfycbzUa99dBB4TtuH8BMfQ44EoHnHMLHfRRRkT4Ks0pnyx1RqYcg4S5-zUkLcSuFvtzeklRA/exec', {
+    fetch('https://script.google.com/macros/library/d/1enKy1NbvcEDiCni0IPDeu7JKIQmSf4L44QSSc7rpiZbTZnMGW3z2GbBR/1', {
         method: 'POST',
         headers: {
             'Content-Type': 'text/plain',
@@ -64,85 +55,4 @@ document.getElementById('surveyForm').addEventListener('submit', function(event)
         alert('Thank you for your ratings!');
         window.close();
     });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Initially set the legend to the tremor scale
-    updateLegend("tremor");
-    const legend = document.getElementById("legend");
-    legend.style.display = "block";
-
-    document.addEventListener("scroll", function() {
-        const radioGroups = document.querySelectorAll('.rating-scale');
-        let found = false;
-
-        radioGroups.forEach(radioGroup => {
-            const rect = radioGroup.getBoundingClientRect();
-            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-                found = true;
-                const parentGroup = radioGroup.closest('.video-group');
-                const scaleType = parentGroup.getAttribute("data-scale");
-                updateLegend(scaleType);
-            }
-        });
-
-        if (found) {
-            legend.style.display = "block";
-        } else if (window.scrollY === 0) {
-            updateLegend("tremor");
-            legend.style.display = "block";
-        } else {
-            legend.style.display = "none";
-        }
-    });
-
-     function updateLegend(scaleType) {
-        const legend = document.getElementById("legend");
-        const legendTitle = document.getElementById("legend-title");
-        const scaleList = document.getElementById("scale-list");
-
-        // Clear the current scale items
-        while (scaleList.firstChild) {
-            scaleList.removeChild(scaleList.firstChild);
-        }
-
-        // Add new scale items based on the scaleType
-        if (scaleType === "tremor") {
-            legendTitle.innerText = "Tremor Scale";
-            scaleList.innerHTML = `
-                <div class="scale-item">0 = Normal</div>
-                <div class="scale-item">1 = Slight (amplitude <0.5 cm). May be intermittent.</div>
-                <div class="scale-item">2 = Moderate amplitude (0.5-1 cm). May be intermittent.</div>
-                <div class="scale-item">3 = Marked amplitude (1-2 cm).</div>
-                <div class="scale-item">4 = Severe amplitude (>2 cm).</div>
-            `;
-        } else if (scaleType === "pouring") {
-            legendTitle.innerText = "Pouring Scale";
-            scaleList.innerHTML = `
-                <div class="scale-item">0 = No tremor</div>
-                <div class="scale-item">1 = Slight tremor, not affecting pouring</div>
-                <div class="scale-item">2 = Moderate tremor, some difficulty pouring</div>
-                <div class="scale-item">3 = Marked tremor, significant difficulty pouring</div>
-                <div class="scale-item">4 = Severe tremor, unable to pour</div>
-            `;
-        } else if (scaleType === "drinking") {
-            legendTitle.innerText = "Drinking Scale";
-            scaleList.innerHTML = `
-                <div class="scale-item">0 = Normal</div>
-                <div class="scale-item">1 = Slight tremor, not affecting drinking.</div>
-                <div class="scale-item">2 = Moderate tremor, some difficulty drinking.</div>
-                <div class="scale-item">3 = Marked tremor, significant difficulty drinking.</div>
-                <div class="scale-item">4 = Severe tremor, unable to drink.</div>
-            `;
-        } else if (scaleType === "spiral") {
-            legendTitle.innerText = "Spiral Scale";
-            scaleList.innerHTML = `
-                <div class="scale-item">0 = Normal</div>
-                <div class="scale-item">1 = Slightly tremulous. May cross lines occasionally.</div>
-                <div class="scale-item">2 = Moderately tremulous or crosses lines frequently.</div>
-                <div class="scale-item">3 = Accomplishes the task with great difficulty. Many errors.</div>
-                <div class="scale-item">4 = Unable to complete drawing.</div>
-            `;
-        }
-    }
 });

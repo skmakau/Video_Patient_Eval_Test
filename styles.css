@@ -17,7 +17,7 @@ body {
     align-items: stretch;
     background-color: rgb(35, 45, 63);
     padding: 10px 20px;
-    color: white;
+        color: white;
     width: 100%;
     position: sticky;
     top: 0;
@@ -142,9 +142,13 @@ form {
 .rating-scale label {
     background: #e4e4e4;
     border-radius: 50%;
-    padding: 10px 15px;
+    padding: 7px 10px; /* Reduced size */
     cursor: pointer;
     transition: background 0.3s;
+    font-size: 0.8em; /* Adjust font size to fit */
+    max-width: 60px; /* Adjust width for long text */
+    word-wrap: break-word; /* Wrap long text */
+    text-align: center;
 }
 
 .rating-scale input[type="radio"]:checked + label {
@@ -153,10 +157,10 @@ form {
 }
 
 .rating-scale label:hover {
-    background: #ccc
+    background: #ccc;
 }
 
-input[type="text"] {
+input[type="text"], textarea {
     width: 50%;
     padding: 10px;
     margin: 10px 0;
@@ -165,6 +169,11 @@ input[type="text"] {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+textarea {
+    resize: vertical;
+}
+
+/* Submit Button Styles */
 .submit-btn {
     background: #4caf50;
     color: #fff;
@@ -186,17 +195,12 @@ input[type="text"] {
 
 /* Legend Styles */
 .legend {
-    flex: 0 0 250px;
     background: #e9f5e9;
     color: #333;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1000;
-    display: none;
+    margin-top: 20px;
 }
 
 .legend h3 {
@@ -217,11 +221,12 @@ input[type="text"] {
 
 .scale-item {
     background: #f4f4f9;
-    padding: 10px;
+    padding: 7px 10px; /* Reduced size */
     border-radius: 5px;
     text-align: left;
     border: 1px solid #ccc;
-    font-size: 0.9em;
+    font-size: 0.8em; /* Adjust font size to fit */
+    word-wrap: break-word; /* Wrap long text */
     color: #555;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -239,3 +244,5 @@ input[type="text"] {
 .footer a {
     color: #fff;
 }
+
+   
