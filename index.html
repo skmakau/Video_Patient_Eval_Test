@@ -31,11 +31,14 @@
                 <div class="legend">
                     <h3>Tremor Scale</h3>
                     <div class="scale-list">
-                        <div class="scale-item">0 = Normal</div>
-                        <div class="scale-item">1 = Slight (amplitude <0.5 cm). May be intermittent.</div>
-                        <div class="scale-item">2 = Moderate amplitude (0.5-1 cm). May be intermittent.</div>
-                        <div class="scale-item">3 = Marked amplitude (1-2 cm).</div>
-                        <div class="scale-item">4 = Severe amplitude (>2 cm).</div>
+                        <div class="scale-item">0 = no tremor</div>
+                        <div class="scale-item">1 = tremor is barely visible (&lt; 0.5 cm)</div>
+                        <div class="scale-item">1.5 = tremor is visible, but less than 1 cm</div>
+                        <div class="scale-item">2 = tremor is 1 - &lt; 3 cm amplitude</div>
+                        <div class="scale-item">2.5 = tremor is 3 - &lt; 5 cm amplitude</div>
+                        <div class="scale-item">3 = tremor is 5 - &lt; 10 cm amplitude</div>
+                        <div class="scale-item">3.5 = tremor is 10 - &lt; 20 cm amplitude</div>
+                        <div class="scale-item">4 = tremor is &gt; 20 cm amplitude</div>
                     </div>
                 </div>
                 <h2>Intention Tremor</h2>
@@ -93,13 +96,15 @@
                                 <label for="video1-3-5">4</label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="comment-video1-2">Comments:</label>
-                            <textarea id="comment-video1-2" name="comment_video1_2" rows="4" cols="50" placeholder="Enter any additional comments here..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="comment-video1-3">Comments:</label>
-                            <textarea id="comment-video1-3" name="comment_video1_3" rows="4" cols="50" placeholder="Enter any additional comments here..."></textarea>
+                        <div class="form-group comments">
+                            <div class="comment-section">
+                                <label for="comment-video1-2">Comments for Video 2:</label>
+                                <textarea id="comment-video1-2" name="comment_video1_2" rows="4" placeholder="Enter any additional comments here..."></textarea>
+                            </div>
+                            <div class="comment-section">
+                                <label for="comment-video1-3">Comments for Video 3:</label>
+                                <textarea id="comment-video1-3" name="comment_video1_3" rows="4" placeholder="Enter any additional comments here..."></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,7 +137,7 @@
                             <input type="radio" id="video3-1-3" name="video3_1" value="2">
                             <label for="video3-1-3">2</label>
                             <input type="radio" id="video3-1-4" name="video3_1" value="3">
-                            <label for="video3-1-4">3</label>
+                                                        <label for="video3-1-4">3</label>
                             <input type="radio" id="video3-1-5" name="video3_1" value="4">
                             <label for="video3-1-5">4</label>
                         </div>
@@ -172,13 +177,15 @@
                                 <label for="video3-3-5">4</label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="comment-video3-2">Comments:</label>
-                            <textarea id="comment-video3-2" name="comment_video3_2" rows="4" cols="50" placeholder="Enter any additional comments here..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="comment-video3-3">Comments:</label>
-                            <textarea id="comment-video3-3" name="comment_video3_3" rows="4" cols="50" placeholder="Enter any additional comments here..."></textarea>
+                        <div class="form-group comments">
+                            <div class="comment-section">
+                                <label for="comment-video3-2">Comments for Video 2:</label>
+                                <textarea id="comment-video3-2" name="comment_video3_2" rows="4" placeholder="Enter any additional comments here..."></textarea>
+                            </div>
+                            <div class="comment-section">
+                                <label for="comment-video3-3">Comments for Video 3:</label>
+                                <textarea id="comment-video3-3" name="comment_video3_3" rows="4" placeholder="Enter any additional comments here..."></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,13 +196,14 @@
                 <div class="legend">
                     <h3>Spiral Scale</h3>
                     <div class="scale-list">
-                        <div class="scale-item">0 = No tremor</div>
-                        <div class="scale-item">1 = Slight tremor, not affecting spiral drawing</div>
-                        <div class="scale-item">2 = Moderate tremor, some difficulty drawing spiral</div>
-                        <div class="scale-item">3 = Marked tremor, significant difficulty drawing spiral</div>
-                        <div class="scale-item">4 = Severe tremor, unable to draw spiral</div>
+                        <div class="scale-item">0 = Normal.</div>
+                        <div class="scale-item">1 = Slight: tremor barely visible.</div>
+                        <div class="scale-item">2 = Mild: obvious tremor.</div>
+                        <div class="scale-item">3 = Moderate: portions of figure not recognizable.</div>
+                        <div class="scale-item">4 = Severe:  figure not recognizable.</div>
                     </div>
                 </div>
+
                 <h2>Archimedes Spiral</h2>
                 <div class="video-group-row">
                     <div class="video-section">
@@ -263,10 +271,12 @@
         </form>
         
         <div class="footer">
-            <p>© 2024 Steadiwear. All rights reserved. | <a href="https://steadiwear.com/pages/our-team" target="_blank">About Us</a> | <a href="https://steadiwear.com/policies/privacy-policy" target="_blank">Terms of Service</a></p>
+                        <p>© 2024 Steadiwear. All rights reserved. | <a href="https://steadiwear.com/pages/our-team" target="_blank">About Us</a> | <a href="https://steadiwear.com/policies/privacy-policy" target="_blank">Terms of Service</a></p>
         </div>
 
         <script src="script.js"></script>
     </div>
 </body>
 </html>
+
+

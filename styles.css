@@ -17,7 +17,7 @@ body {
     align-items: stretch;
     background-color: rgb(35, 45, 63);
     padding: 10px 20px;
-        color: white;
+    color: white;
     width: 100%;
     position: sticky;
     top: 0;
@@ -161,7 +161,7 @@ form {
 }
 
 input[type="text"], textarea {
-    width: 50%;
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -169,8 +169,20 @@ input[type="text"], textarea {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+input[type="text"] {
+    width: 300px; /* Adjust the width of the name input box */
+}
+
 textarea {
     resize: vertical;
+    flex: 1 1 45%;
+}
+
+.form-group.comments {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px; /* Add margin to separate from rating scales */
 }
 
 /* Submit Button Styles */
@@ -214,7 +226,7 @@ textarea {
 
 .scale-list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
     padding-left: 0;
 }
@@ -229,6 +241,8 @@ textarea {
     word-wrap: break-word; /* Wrap long text */
     color: #555;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 10px); /* Ensure two items per line */
+    box-sizing: border-box;
 }
 
 /* Footer Styling */
@@ -244,5 +258,3 @@ textarea {
 .footer a {
     color: #fff;
 }
-
-   
